@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href={{url_for('static',filename='predictor.css')}}>
+    <title>Diabetes Prediction</title>
+</head>
+<body>
+    <section>
+        <input type="checkbox" id="check">
+        <header>
+          </div>
+          <h2><a href="/home" class="logo">AI Pathology Lab</a></h2>
+          <div class="navigation">
+            <a href="/home">Home</a>
+            <a href="/diabetes">Diabetes</a>
+            <a href="/liver">Liver Disease</a>
+            <a href="/heart">Heart</a>
+          </div> 
+          <label for="check">
+          <i class="fas fa-bars menu-btn"></i>
+          <i class="fas fa-times close-btn"></i>
+          </label>
+        </header>
+    <section id="prediction-form">
+        <form class="form" action="/diabetes", method="POST">
+            <h1 class="my-3 text-center">Diabetes Predictor</h1>
+            <div class="row">
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label>Pregnancies</label>
+                        <input class="form-control" type="text" name="pregnancies" placeholder="Number of Pregnancies eg. 0" required><br>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label>Glucose</label>
+                        <input class="form-control" type="text" name="glucose" placeholder="Glucose (mg/dL) eg. 80" required><br>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label>Blood Pressure</label>
+                        <input class="form-control" type="text" name="bloodpressure" placeholder="Blood Pressure (mmHg) eg. 80" required><br>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label>Skinthickness</label>
+                        <input class="form-control" type="text" name="skinthickness" placeholder="Skin Thickness (mm) eg. 20" required><br>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label>Insulin</label>
+                        <input class="form-control" type="text" name="insulin" placeholder="Insulin Level (IU/mL) eg. 80" required><br>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label>BMI</label>
+                        <input class="form-control" type="text" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 23.1" required><br>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label>DPF</label>
+                        <input class="form-control" type="text" name="dpf" placeholder="Diabetes Pedigree Function eg. 0.52" required><br>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label>Age</label>
+                        <input class="form-control" type="text" name="age" placeholder="Age (years) eg. 34" required><br>
+                    </div>
+                </div>  
+                </div>
+                <div class="col-md-6 my-2 d-flex align-items-end justify-content-around">
+                    <button type="submit" class="btn btn-info button" style="margin-left: 100%;">Predict</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <div>
+         <h1><center>Result: {{ prediction }} </center></h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
